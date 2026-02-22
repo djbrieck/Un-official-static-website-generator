@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ name }} (Un-official)</title>
+  <meta name="description" content="Un-official community website for {{ name }}{% if location %} in {{ location }}{% endif %}.">
+
+  <meta property="og:title" content="{{ name }} (Un-official)">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ github_pages_url }}">
+  <meta property="og:image" content="android-chrome-512x512.png">
+  <meta property="og:image:alt" content="{{ name }} logo">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <h1>{{ name }} (Un-official)</h1>
+
+  <h6>This site is independently and freely operated by
+    {% if operator_url %}<a href="{{ operator_url }}">{{ operator }}</a>{% else %}{{ operator }}{% endif %}.
+    {% if github -%}
+    For changes and updates, submit a <a href="{{ github }}/pulls">pull request</a>
+    or
+    <a href="{{ github }}/issues">create an issue</a>.
+    {% endif -%}
+    {% if operator_support_url -%}
+    <br>
+    <a href="{{ operator_support_url }}">To support and see more sites like this one.</a>
+    {% endif -%}
+  </h6>
+{%- if location %}
+
+  <h3>Location</h3>
+  <address>{{ location }}</address>
+{%- endif %}
+{%- if email %}
+
+  <h3>Email <a href="/cdn-cgi/l/email-protection#c2b9b9e2a7afa3abaee2bfbf">{{ email }}</a></h3>
+{%- endif %}
+{%- if phone %}
+
+  <h3>Phone <a href="tel:{{ phone_digits }}">{{ phone }}</a></h3>
+{%- endif %}
+{%- if hours %}
+
+  <h3>Hours</h3>
+  {%- for entry in hours %}
+  <p>{{ entry }}</p>
+  {%- endfor %}
+{%- endif %}
+{%- if links %}
+
+  <h3>Links</h3>
+  {%- for link in links %}
+  <p><a href="{{ link.url }}">{{ link.label }}</a></p>
+  {%- endfor %}
+{%- endif %}
+{%- if menu %}
+
+  <h3>Menu</h3>
+  {%- for item in menu %}
+  <p><a href="{{ item.url }}">{{ item.label }}</a></p>
+  {%- endfor %}
+{%- endif %}
+{%- if services %}
+
+  <h3>Services</h3>
+  {%- for service in services %}
+  <p>{{ service }}</p>
+  {%- endfor %}
+{%- endif %}
+{%- if photos %}
+
+  <h3>Photos</h3>
+  {%- for photo in photos %}
+  <p><a href="{{ photo.url }}">{{ photo.label }}</a></p>
+  {%- endfor %}
+{%- endif %}
+
+  <script data-cfas
