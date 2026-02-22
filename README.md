@@ -1,4 +1,4 @@
-# UnofficalSiteGenerator
+# Un-official-static-website-generator
 
 A simple Python tool that generates Un-official static websites from a single
 `site.md` config file per site. Drop in a config, run one command, get a
@@ -24,12 +24,12 @@ pip install pyyaml jinja2 pillow requests
 Sites live as **siblings** of the tool folder — not inside it.
 
 ```
-UnofficalSiteGenerator/      <- tool lives here, never moves
+UnofficalStaticSiteGenerator/      <- tool lives here, never moves
   generate.py
   index.html.j2
   README.md
 
-MyBusiness-Unofficial/       <- site folder, sibling to the tool
+Business-Unofficial/       <- site folder, sibling to the tool
   site.md                    <- the only file you edit per site
   css/                       <- optional — copied into dist/ as-is
   js/
@@ -48,10 +48,10 @@ AnotherBusiness-Unofficial/  <- add as many as you need
 
 ```bash
 # Pass the site directory
-python UnofficalSiteGenerator/generate.py ../MyBusiness-Unofficial
+python UnofficalSiteGenerator/generate.py ../Business-Unofficial
 
 # Or pass site.md directly
-python UnofficalSiteGenerator/generate.py ../MyBusiness-Unofficial/site.md
+python UnofficalSiteGenerator/generate.py ../Business-Unofficial/site.md
 ```
 
 Output lands in `dist/` inside each site's own folder.
@@ -63,8 +63,8 @@ Output lands in `dist/` inside each site's own folder.
 1. Create a new sibling folder and copy the blank starter into it:
 
    ```bash
-   mkdir ../MyBusiness-Unofficial
-   cp site.md ../MyBusiness-Unofficial/site.md
+   mkdir ../Business-Unofficial
+   cp site.md ../Business-Unofficial/site.md
    ```
 
 2. Edit `site.md` — fill in the fields, remove any sections you don't need.
@@ -72,7 +72,7 @@ Output lands in `dist/` inside each site's own folder.
 3. Optionally add assets alongside `site.md`:
 
    ```
-   MyBusiness-Unofficial/
+   Business-Unofficial/
      site.md
      css/style.css
      img/storefront.jpg
@@ -82,7 +82,7 @@ Output lands in `dist/` inside each site's own folder.
 4. Run the generator:
 
    ```bash
-   python UnofficalSiteGenerator/generate.py ../MyBusiness-Unofficial
+   python UnofficalSiteGenerator/generate.py ../Business-Unofficial
    ```
 
 5. Open `dist/index.html` in a browser to preview, then copy `dist/` contents
