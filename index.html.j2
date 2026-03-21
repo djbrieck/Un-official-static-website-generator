@@ -28,13 +28,13 @@
   <h6>This site is independently and freely operated by
     {% if operator_url %}<a href="{{ operator_url }}">{{ operator }}</a>{% else %}{{ operator }}{% endif %}.
     {% if github -%}
-    For changes and updates, submit a <a href="{{ github }}/pulls">pull request</a>
+    Git the <a href="{{ github }}">source code</a>. For updates/changes submit a <a href="{{ github }}/pulls">pull request</a>
     or
     <a href="{{ github }}/issues">create an issue</a>.
     {% endif -%}
     {% if operator_support_url -%}
     <br>
-    <a href="{{ operator_support_url }}">To support and see more sites like this one.</a>
+    <a href="{{ operator_support_url }}">Support and see more free sites like this one.</a>
     {% endif -%}
   </h6>
 {%- if location %}
